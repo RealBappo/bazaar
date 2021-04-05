@@ -6,7 +6,7 @@ bz = "https://api.hypixel.net/skyblock/bazaar?key=3f2bbc59-8b57-4534-bfaa-197800
 bd = requests.get(bz)
 bzd = bd.json()
 data = input("pick one, mining, farming, combat, wood, fish(this is case sensitive, no caps) :\n")
-if bzd['success'] == True:
+if bzd['success'] is True:
     if data == 'farming':           #farming
         farm = ({'wt' : f"{bzd['products']['WHEAT']['quick_status']}" ,
         'ebr' : f"{bzd['products']['ENCHANTED_BREAD']['quick_status']}" ,
@@ -57,7 +57,8 @@ if bzd['success'] == True:
         f"{bzd['products']['ENCHANTED_PORK']['quick_status']}" , 'ecpc' : 
         f"{bzd['products']['ENCHANTED_GRILLED_PORK']['quick_status']}" , 'cn' : 
         f"{bzd['products']['RAW_CHICKEN']['quick_status']}" , 'ecn' : 
-        f"{bzd['products']['ENCHANTED_RAW_CHICKEN']['quick_status']}" , 'eg' : f"{bzd['products']['ENCHANTED_EGG']['quick_status']}" , 'eck' : f"{bzd['products']['ENCHANTED_CAKE']['quick_status']}" , 'esg' : f"{bzd['products']['SUPER_EGG']['quick_status']}" , 'mt' : f"{bzd['products']['MUTTON']['quick_status']}" , 'emt' : f"{bzd['products']['ENCHANTED_MUTTON']['quick_status']}" , 'ecmt' : f"{bzd['products']['ENCHANTED_COOKED_MUTTON']['quick_status']}" , 'rt' : f"{bzd['products']['RABBIT']['quick_status']}" , 'ert' : f"{bzd['products']['ENCHANTED_RABBIT']['quick_status']}" , 'rf' : f"{bzd['products']['RABBIT_FOOT']['quick_status']}" , 'rh' : f"{bzd['products']['RABBIT_HIDE']['quick_status']}" , 'erf' : f"{bzd['products']['ENCHANTED_RABBIT_FOOT']['quick_status']}" , 'erh' : f"{bzd['products']['ENCHANTED_RABBIT_HIDE']['quick_status']}" , 'nw' : f"{bzd['products']['NETHER_STALK']['quick_status']}" , 'enw' : f"{bzd['products']['ENCHANTED_NETHER_STALK']['quick_status']}" , 'mnw' : f"{bzd['products']['MUTANT_NETHER_STALK']['quick_status']}"})
+        f"{bzd['products']['ENCHANTED_RAW_CHICKEN']['quick_status']}" , 'eg' : f"{bzd['products']['ENCHANTED_EGG']['quick_status']}" , 'eck' : f"{bzd['products']['ENCHANTED_CAKE']['quick_status']}" , 'eeg
+                 ' : f"{bzd['products']['SUPER_EGG']['quick_status']}" , 'mt' : f"{bzd['products']['MUTTON']['quick_status']}" , 'emt' : f"{bzd['products']['ENCHANTED_MUTTON']['quick_status']}" , 'ecmt' : f"{bzd['products']['ENCHANTED_COOKED_MUTTON']['quick_status']}" , 'rt' : f"{bzd['products']['RABBIT']['quick_status']}" , 'ert' : f"{bzd['products']['ENCHANTED_RABBIT']['quick_status']}" , 'rf' : f"{bzd['products']['RABBIT_FOOT']['quick_status']}" , 'rh' : f"{bzd['products']['RABBIT_HIDE']['quick_status']}" , 'erf' : f"{bzd['products']['ENCHANTED_RABBIT_FOOT']['quick_status']}" , 'erh' : f"{bzd['products']['ENCHANTED_RABBIT_HIDE']['quick_status']}" , 'nw' : f"{bzd['products']['NETHER_STALK']['quick_status']}" , 'enw' : f"{bzd['products']['ENCHANTED_NETHER_STALK']['quick_status']}" , 'mnw' : f"{bzd['products']['MUTANT_NETHER_STALK']['quick_status']}"})
         for item in farm:
             try:
                 if farm[item]['buyPrice']*160<farm[f'e{item}']['sellPrice']:
